@@ -32,35 +32,25 @@ Route22RivalBattleLow:
 	iftrue .RivalBulbasaur1
 	checkevent EVENT_GOT_BULBASAUR_FROM_OAK
 	iftrue .RivalCharmander1
-;	winlosstext Route22RivalBattleWinText1, Route22RivalBattleLossText1
-;	setlasttalked ROUTE22_RIVAL
 	loadtrainer RIVAL1, RIVAL1_2_SQUIRTLE
 	loadmem VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-;	dontrestartmapmusic
 	reloadmap
 	sjump .FinishRival1
 .RivalBulbasaur1:
-;	winlosstext Route22RivalBattleWinText1, Route22RivalBattleLossText1
-;	setlasttalked ROUTE22_RIVAL
 	loadtrainer RIVAL1, RIVAL1_2_BULBASAUR
 	loadmem VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-;	dontrestartmapmusic
 	reloadmap
 	sjump .FinishRival1
 .RivalCharmander1:
-;	winlosstext Route22RivalBattleWinText1, Route22RivalBattleLossText1
-;	setlasttalked ROUTE22_RIVAL
 	loadtrainer RIVAL1, RIVAL1_2_CHARMANDER
 	loadmem VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-;	dontrestartmapmusic
 	reloadmap
 	sjump .FinishRival1
 
 .FinishRival1:
-;	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext Route22RivalAfterBattleText1
 	waitbutton
@@ -71,8 +61,6 @@ Route22RivalBattleLow:
 	disappear ROUTE22_RIVAL
 	setscene SCENE_ROUTE22_NOOP
 	special HealParty
-;	special FadeOutMusic
-;	playmapmusic
 	special RestartMapMusic
 	end
 
@@ -241,8 +229,6 @@ Route22_MapEvents:
 
 	def_warp_events
 	warp_event  9,  5, VICTORY_ROAD_GATE, 1
-;	warp_event  4, 10, ROUTE_28_GATE, 3
-;	warp_event  4, 11, ROUTE_28_GATE, 4
 	warp_event  9, 15, ROUTE_26_GATE, 1
 	warp_event 10, 15, ROUTE_26_GATE, 2
 
